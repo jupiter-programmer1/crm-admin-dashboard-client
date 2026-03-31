@@ -7,9 +7,10 @@ export default function Animation ({ children }) {
     const [loading, setLoading] = useState(true);
     const { pathname } = useLocation();
     useEffect(() => {
-        setTimeout(() => {
+        const timer = setTimeout(() => {
             setLoading(false);
         }, 2000);
+        return () => clearTimeout(timer);
     }, []);
     if (loading) {
         return <Loading/>;
@@ -27,10 +28,10 @@ const Loading = () => {
         <Box component='div' width='100%' height='100vh' bgcolor='white' position='fixed' display='flex'
         alignItems='center' justifyContent='center'>
             <Box component='div'>
-                <Box component='div' display='flex' alignItems='center' gap={1}>
+                <Box component='div' display='flex' alignItems='center' gap={1} px={2}>
                     <Box component='img' src={Logo} height={80} width={80} alt='logo'/>
-                    <Box component='div'>
-                        <Typography component='h1' fontSize={28} fontWeight={600}>
+                    <Box component='div' width='200px'>
+                        <Typography component='h1' fontSize={28} fontWeight={600} lineHeight={1}>
                             <Typography component='span' color='primary' fontSize={28} fontWeight={600}>CRM </Typography> 
                             ADMIN DASHBOARD
                         </Typography>
