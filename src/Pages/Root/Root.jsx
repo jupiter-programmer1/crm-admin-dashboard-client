@@ -6,7 +6,7 @@ import Sidebar from '../../Components/Sidebar/Sidebar';
 export default function Root () {
     const { open } = useSidebar();
     return (
-        <Box component='div' display='flex'>
+        <Box component='div' display={{ md: 'flex' }}>
             <Box component='div' width={open ? 270 : 70} sx={{ transition: 'width 0.5s ease' }} 
             display={{ xs: 'none', md: 'block' }}>
                 <Sidebar/>

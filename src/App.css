@@ -103,6 +103,9 @@ input[id^='otp-input-']:focus {
     outline: 1px solid var(--main);  
 }
 @media screen and (max-width: 550px) {
+    .page-layout {
+        height: auto;
+    }
     .ck.ck-reset.ck-editor {
         width: 99.5%;
     }
